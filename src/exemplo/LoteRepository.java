@@ -1,3 +1,5 @@
+package exemplo;
+
 import exemplo.Lote;
 import exemplo.Produto;
 
