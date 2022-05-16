@@ -3,6 +3,7 @@ package exemplo;
 import exemplo.Lote;
 import exemplo.Produto;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,6 +24,18 @@ public class LoteRepository {
 
     public void remove(Lote l1){
         lotes.remove( l1.getId(), l1);
+    }
+
+    public void updateLote(Lote l1){
+        lotes.replace(l1.getId(), l1);
+    }
+
+    public ArrayList<Lote> getAllLotes(){
+        ArrayList<Lote> allLotes = new ArrayList<>();
+        for(Lote l : lotes.values()){
+            allLotes.add(l);
+        }
+        return allLotes;
     }
 
     public Lote getProduto(Lote l1){

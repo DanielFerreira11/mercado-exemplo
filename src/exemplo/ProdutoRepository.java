@@ -1,8 +1,10 @@
 package exemplo;
 import exemplo.Produto;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class ProdutoRepository {
     Map<String, Produto> catalogo = new HashMap<String,Produto>();
@@ -26,8 +28,18 @@ public class ProdutoRepository {
         return catalogo.get(p1.getId());
     }
 
-    public Produto updateProduto(Produto p1){
+    public void updateProduto(Produto p1){
+        catalogo.replace(p1.getId(), p1);
+    }
 
+
+
+    public ArrayList<Produto> getAllProds(){
+        ArrayList<Produto> allProds = new ArrayList<>();
+        for(Produto p : catalogo.values()){
+            allProds.add(p);
+        }
+        return allProds;
     }
 
 
